@@ -14,7 +14,18 @@ import React from 'react';
     // Write code here
     render(){
       return( <div className="todoList">
-      I am a TodoList.
+      <table style={{border: "2px solid black"}}>    
+                        <tbody>
+                        <tr>
+            <td style={this.props.title}>Shopping</td>      
+            <td style={this.props.children}>Milk</td>
+          </tr>
+          <tr>
+            <td style={this.props.title}>Hair cut</td>            <td style={this.props.children}>13:00</td>
+            <td style={this.props.children}>13:00</td>
+          </tr>
+                        </tbody>
+                    </table>
     </div>);
     }
   }
@@ -25,5 +36,13 @@ import React from 'react';
       return(<div className="todoForm">
       I am a TodoForm.
     </div>);
+    }
+  }
+  class Todo extends React.Component {
+    // Write code here
+    render(){
+      return(< div Classname="todo">
+I am a Todo
+      </div>);
     }
   }
