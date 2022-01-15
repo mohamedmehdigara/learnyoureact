@@ -1,48 +1,40 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-    export default class TodoBox extends React.Component{
-      render() {
-        return (<div className="todoBox">
-                    <h1>Todos</h1>
-                    <TodoList />
-                    <TodoForm />
-                </div>
+export default class TodoBox extends React.Component {
+  // Omitted
+}
+
+class TodoList extends React.Component {
+    render() {
+        return (
+            <div className="todoList">
+                <table style={{border: "2px solid black"}}>    
+                  <tbody>
+                    <Todo title="Shopping">Milk</Todo>
+                    <Todo title="Hair cut">13:00</Todo>        
+                    <Todo title="Learn React">15:00</Todo>     
+                  </tbody>
+                </table>
+            </div>
         );
     }
-  }
-  class TodoList extends React.Component {
-    // Write code here
-    render(){
-      return( <div className="todoList">
-      <table style={{border: "2px solid black"}}>    
-                        <tbody>
-                        <tr>
-            <td style={this.props.title}>Shopping</td>      
-            <td style={this.props.children}>Milk</td>
-          </tr>
-          <tr>
-            <td style={this.props.title}>Hair cut</td>            <td style={this.props.children}>13:00</td>
-            <td style={this.props.children}>13:00</td>
-          </tr>
-                        </tbody>
-                    </table>
-    </div>);
-    }
-  }
+}
 
-  class TodoForm extends React.Component {
-    // Write code here
-    render(){
-      return(<div className="todoForm">
-      I am a TodoForm.
-    </div>);
+class Todo extends React.Component {
+    render() {
+        return (
+            <tr>
+                <td style={{border: "1px solid black"}}>{this.props.title}</td>
+                <td style={{border: "1px solid black"}}>{this.props.children}</td>
+            </tr>
+        );
     }
-  }
-  class Todo extends React.Component {
-    // Write code here
-    render(){
-      return(< div Classname="todo">
-I am a Todo
-      </div>);
-    }
-  }
+}
+Todo.propTypes = {
+    title: PropTypes.string.isRequired
+};
+
+class TodoForm extends React.Component {
+  // Omitted
+}
