@@ -42,8 +42,7 @@ let style = {
   // Omitted
 };
 
-Next, we'll change the code on our server, program.js. Specifically, we'll change the    
-callback function of app.use() and pass it a data variable.
+
 
 var express = require('express');
 var app = express();
